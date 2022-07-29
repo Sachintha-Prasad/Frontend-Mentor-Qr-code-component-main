@@ -1,0 +1,50 @@
+@import './reset';
+@import './variable';
+@import './mixin';
+
+body {
+    position: relative;
+    height: 100vh;
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $White;
+    border-radius: 1rem;
+    height: auto;
+    width: 28rem;
+    padding: 2em;
+
+    @include flex(column, center, center);
+    gap: 1.5rem;
+
+    .QR-image {
+        // width: clamp(2rem, 50%, 30rem);
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .title {
+        color: $Dark-blue;
+        text-align: center;
+    }
+    
+    .description {
+        font-size: 1.4rem;
+        text-align: center;
+        color: $Grayish-blue;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .card {
+        width: 90%;
+        padding: 1.5em;
+    }
+}
+
+
